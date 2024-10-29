@@ -48,7 +48,7 @@ def step_RandomHillClimbing(board):
     return board
 
 def solution_RandomHillClimbing(board):
-    maxRound = 500000
+    maxRound = 50000
     count = 0
     while True:
         distance = getManhattanDistance(board)
@@ -63,13 +63,13 @@ def solution_RandomHillClimbing(board):
     
 def main():
     title = "EightPuzzle_RandomHillClimbing"
-    startTime = time.clock()
+    startTime = time.time()
     successCase = 0
     totalCase = 0
     result = title + " result:\n\n"
     with open("eightPuzzleTest.txt", "r") as ins:
         for line in ins:
-            print "case: ", totalCase
+            print ("case: ", totalCase)
             global FAILED
             FAILED = False
             totalCase += 1
@@ -85,11 +85,11 @@ def main():
                     result += str(board[col]) + " "
             result += "\n"
     
-    endTime = time.clock()
+    endTime = time.time()
     result += "\nTotal time: " + str(endTime - startTime) + '\n'
     result += "Total case number: " + str(totalCase) + ", Success case number: " + str(successCase) + '\n'
     result += "Success rate: " + str(successCase / float(totalCase)) + '\n'
-    print result
+    print (result)
     
     f = open(title + '.txt', 'w')
     f.write(result)

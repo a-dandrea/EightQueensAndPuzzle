@@ -45,7 +45,7 @@ def solution_RandomHillClimbing(board):
 
 def main():
     f = open("eightPuzzleTest.txt", "wb")
-    testCaseCount = 10000
+    testCaseCount = 800
     result = ""
     while testCaseCount > 0:
         board = [0,1,2,3,4,5,6,7,8]
@@ -56,7 +56,7 @@ def main():
         for i in range(0,8): # i = 0 1 2 3 4 5 6 7
             result += str(board[i]) + ' '
         result += str(board[i+1]) + '\n' #! i+1=8
-    print result
+    print (result)
     f.write(result)
     f.close()
     
